@@ -1,0 +1,15 @@
+version: "3"
+services:
+    manager:
+        build: .
+        depends_on:
+            - db
+        environment:
+            CSV_FILENAME: "data.csv"
+            POSTGRES_USER: "USER"
+            POSTGRES_PASSWORD: "PASSWORD"
+    db:
+        image: postgres
+        environment:
+            POSTGRES_USER: "USER"
+            POSTGRES_PASSWORD: "PASSWORD"
